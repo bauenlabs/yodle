@@ -1,0 +1,10 @@
+machine:
+  node:
+    version: v6.10.2
+dependencies:
+  override:
+    - yarn
+test:
+  override:
+    - "yarn lint"
+    - "yarn test"

@@ -10,7 +10,8 @@
     "lint": "eslint --ext .jsx,.js .",
     "test": "nyc ava */*/test --verbose",
     "precommit": "yarn lint",
-    "prepush": "yarn test"
+    "prepush": "yarn test",
+    "semantic-release": "semantic-release pre ; semantic-release post"
   },
   "devDependencies": {
     "babel-core": "^6.24.1",
@@ -29,6 +30,10 @@
     "eslint-plugin-react": "^7.0.1",
     "husky": "^0.13.4",
     "nyc": "^11.0.2",
-    "passport": "^0.3.2"
+    "passport": "^0.3.2",
+    "semantic-release": "^6.3.6"
+  },
+  "engines": {
+    "node": "6.10.2"
   }
 }
