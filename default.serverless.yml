@@ -1,0 +1,8 @@
+service: yodle-PACKAGENAME
+plugins:
+  - serverless-webpack
+custom:
+  webpack: ../../webpack.config.js
+provider:
+  name: aws
+  runtime: nodejs6.10
