@@ -1,0 +1,12 @@
+{
+  "name": "yodle",
+  "version": "0.0.0-development",
+  "description": "Yodle is a JSON API for interacting with Echo's cache",
+  "repository": "git@github.com:bauenlabs/yodle.git",
+  "author": "Patrick Coffey <patrickcoffey48@gmail.com>",
+  "private": true,
+  "license": "UNLICENSED",
+  "dependencies": {
+    "serverless": "^1.14.0"
+  }
+}
