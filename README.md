@@ -1,5 +1,6 @@
 # yodle
 ![CircleCI Status](https://circleci.com/gh/bauenlabs/yodle.png?style=shield&circle-token=5655baef3454adc05b34cbd5a5f3a6a10c939a73)
+
 Yodle is a JSON API for interacting with Echo's cache 👹
 
 ## Project Structure
