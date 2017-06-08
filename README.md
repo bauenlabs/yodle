@@ -29,4 +29,7 @@ This project makes use of [serverless-webpack](https://github.com/elastic-coders
  - `serverless webpack serve`: Starts a local server on por 8000 that acts like API Gateway.
 
 ## Coding Standards
-Coding standards will be rigorously enforced on this project. To lint this codebase, run `yarn lint`.
+Coding standards will be rigorously enforced on this project. To lint this codebase, run `yarn lint`. There is a pre-commit hook that will run this for you before a commit is formed. This will prevent mal-formed code from being pushed.
+
+## Testing
+100% test coverage should be mantained at all times on this project. To run tests and code coverage inspectors, run `yarn test`. There is a pre-commit hook that will run tests for you before a push is performed. This will prevent code that breaks function tests from being pushed.
