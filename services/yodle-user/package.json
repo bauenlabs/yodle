@@ -1,9 +1,0 @@
-{
-  "name": "yodle-user",
-  "version": "0.0.0-development",
-  "description": "User API for Yodle",
-  "main": "handler.js",
-  "repository": "https://github.com/bauenlabs/yodle.git",
-  "author": "Patrick Coffey <patrickcoffey48@gmail.com>",
-  "license": "UNLICENSED"
-}
