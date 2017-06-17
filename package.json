@@ -39,7 +39,8 @@
     "fs": "^0.0.1-security",
     "mongoose": "^4.10.5",
     "passport": "^0.3.2",
-    "serverless-http": "^1.4.3"
+    "serverless-http": "^1.4.3",
+    "webpack-node-externals": "^1.6.0"
   },
   "engines": {
     "node": "6.10.2"

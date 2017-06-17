@@ -3,8 +3,14 @@
  * Contains Webpack configuration.
  */
 
+const nodeExternals = require('webpack-node-externals');
+
 module.exports = {
   entry: './handler.js',
+  target: 'node',
+  externals: [nodeExternals({
+    modulesDir: '../../node_modules',
+  })],
   module: {
     loaders: [{
       test: /\.js$/,
