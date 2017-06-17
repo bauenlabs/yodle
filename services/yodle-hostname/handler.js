@@ -4,9 +4,9 @@
  */
 
 import express from 'express'
-import fortune from 'fortune'
 import serverless from 'serverless-http'
-import fortuneHTTP from 'fortune-http;
+import fortune from 'fortune'
+import fortuneHTTP from 'fortune-http'
 import fortuneMongo from 'fortune-mongodb'
 import fortuneJsonAPI from 'fortune-json-api'
 
@@ -33,15 +33,7 @@ const listener = fortuneHTTP(store, {
 const app = express()
 app.use((request, response) =>
   listener(request, response)
-  .catch(error => { ... }))
+  .catch(console.error))
 
 
-module.exports.api = (event, context, callback) => {
-  callback(null, {
-    statusCode: 200,
-    headers: {
-      'Content-Type': 'application/vnd.api+json',
-    },
-    body: { 'message': 'hi there' },
-  });
-};
+module.exports.api = serverless(app)
