@@ -1,10 +1,14 @@
+/**
+ * @file webpack.config.js
+ * Contains Webpack configuration.
+ */
+
 module.exports = {
   entry: './handler.js',
-  target: 'node',
   module: {
     loaders: [{
       test: /\.js$/,
-      loaders: ['babel'],
+      loaders: ['babel-loader'],
       exclude: /node_modules/,
     }],
   },

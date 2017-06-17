@@ -7,6 +7,7 @@
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
+    "serve": "serverless webpack serve",
     "lint": "eslint --ext .jsx,.js .",
     "test": "nyc ava */*/test --verbose",
     "semantic-release": "semantic-release pre ; semantic-release post"
@@ -26,7 +27,7 @@
     "nyc": "^11.0.2",
     "semantic-release": "^6.3.6",
     "serverless": "^1.14.0",
-    "serverless-webpack": "https://github.com/patrickocoffeyo/serverless-webpack.git#feature/support-any-method",
+    "serverless-webpack": "https://github.com/Whoaa512/serverless-webpack.git#support-the-any-method",
     "webpack": "^2.6.1"
   },
   "dependencies": {
@@ -35,6 +36,7 @@
     "fortune-http": "^1.0.16",
     "fortune-json-api": "^2.1.2",
     "fortune-mongodb": "^1.1.5",
+    "fs": "^0.0.1-security",
     "mongoose": "^4.10.5",
     "passport": "^0.3.2",
     "serverless-http": "^1.4.3"

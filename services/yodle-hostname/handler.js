@@ -3,7 +3,14 @@
  * Contains hostname API definition for Yodle.
  */
 
-import APIService from '../../lib/APIService'
+const serverless = require('serverless-http');
 
-const service = new APIService()
-module.exports.api = service.get
+module.exports.api = (event, context, callback) => {
+  callback(null, {
+    statusCode: 200,
+    headers: {
+      'Content-Type': 'application/vnd.api+json',
+    },
+    body: { 'message': 'hi there' },
+  });
+};
