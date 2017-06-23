@@ -4,7 +4,7 @@
  */
 
 import express from 'express'
-import serverless from 'serverless-http'
+import awsServerlessExpress from 'aws-serverless-express'
 import fortune from 'fortune'
 import fortuneHTTP from 'fortune-http'
 import fortuneMongo from 'fortune-mongodb'
@@ -14,26 +14,26 @@ import fortuneJsonAPI from 'fortune-json-api'
 const store = fortune({
   hostname: {
     name: String,
-  }
+  },
 }, {
   adapter: [
     fortuneMongo,
-    { url: 'mongodb://localhost:27017/test' }
-  ]
+    { url: 'mongodb://34.211.179.255:27017/test' },
+  ],
 })
 
 // Initialize an HTTP listener.
 const listener = fortuneHTTP(store, {
   serializers: [
-    [ fortuneJsonAPI ]
-  ]
+    [fortuneJsonAPI],
+  ],
 })
 
 // Initialize app object.
 const app = express()
-app.use((request, response) =>
-  listener(request, response)
-  .catch(console.error))
+app.use((req, res) => {
+  listener(req, res)
+})
 
-
-module.exports.api = serverless(app)
+const server = awsServerlessExpress.createServer(app)
+module.exports.api = (event, context) => awsServerlessExpress.proxy(server, event, context)

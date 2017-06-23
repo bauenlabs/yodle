@@ -4,3 +4,5 @@ rules:
   # Because services don't have their own package.json files, this must be
   # disabled to prevent eslint from coughing.
   import/no-extraneous-dependencies: 0
+  # Why the fuck do we need semi-colons?
+  semi: 0
