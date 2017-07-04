@@ -36,4 +36,7 @@ app.use((req, res) => {
 })
 
 const server = awsServerlessExpress.createServer(app)
-module.exports.api = (event, context) => awsServerlessExpress.proxy(server, event, context)
+module.exports.api = (event, context, callback) => {
+  context.succeed = result => callback(null, result);
+  awsServerlessExpress.proxy(server, event, context)
+}
