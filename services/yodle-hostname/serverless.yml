@@ -2,6 +2,7 @@
 service: yodle-hostname
 plugins:
   - serverless-webpack
+  - serverless-offline
 custom:
   webpack: ../../webpack.config.js
   webpackIncludeModules:
@@ -10,11 +11,11 @@ provider:
   name: aws
   runtime: nodejs6.10
 functions:
-  getHostname:
+  gethostname:
     handler: handler.api
-    memorySize: 128
-    description: Hostname query endpoint.
+    memorysize: 128
+    description: hostname query endpoint.
     events:
       - http:
           path: api/hostname
-          method: ANY
+          method: any

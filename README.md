@@ -23,12 +23,12 @@ As noted in the list above, each service should contain a `serverless.yml` file 
 In the root of this repository, run `yarn`.
 
 ## Development
-This project makes use of [serverless-webpack](https://github.com/elastic-coders/serverless-webpack), therefore the build/dev tools in that project are available within this one. Within a service, you can do any of the following:
+This project makes use of [serverless-webpack](https://github.com/elastic-coders/serverless-webpack) and [serverless-offline](https://github.com/dherault/serverless-offline). The following commands are available.
 
  - `serverless webpack invoke --function funcName`: Invokes the specified function.
  - `serverless webpack watch --function funcName`: Invokes a function and re-invokes when files change.
  - `serverless webpack --out folderName`: Bundles specified functions and spits it into the given dir.
- - `serverless webpack serve`: Starts a local server on por 8000 that acts like API Gateway.
+ - `serverless offline start`: Starts a local server on port 3000 that acts like API Gateway.
 
 ## Coding Standards
 Coding standards will be rigorously enforced on this project. To lint this codebase, run `yarn lint`. There is a pre-commit hook that will run this for you before a commit is formed. This will prevent mal-formed code from being pushed.
