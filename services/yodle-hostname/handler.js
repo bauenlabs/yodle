@@ -3,12 +3,12 @@
  * Contains hostname API definition for Yodle.
  */
 
-import express from 'express'
-import awsServerlessExpress from 'aws-serverless-express'
-import fortune from 'fortune'
-import fortuneHTTP from 'fortune-http'
-import fortuneMongo from 'fortune-mongodb'
-import fortuneJsonAPI from 'fortune-json-api'
+const express = require('express');
+const awsServerlessExpress = require('aws-serverless-express');
+const fortune = require('fortune');
+const fortuneHTTP = require('fortune-http');
+const fortuneMongo = require('fortune-mongodb');
+const fortuneJsonAPI = require('fortune-json-api');
 
 // Initialize fortune instance (Define schema and store).
 const store = fortune({
@@ -35,14 +35,20 @@ app.use((req, res) => {
   listener(req, res)
 })
 
+module.exports.api = app;
+
+// @TODO This is intended to make an express app work on API Gateway. As of now
+// it creates issues that are blocking.
 // Initialize proxy server.
-const server = awsServerlessExpress.createServer(app, null, ['application/vnd.api+json'])
+//const server = awsServerlessExpress.createServer(app, null, ['application/vnd.api+json'])
 
 // Export endpoint handler.
-module.exports.api = (event, context, callback) => {
-  // Stub the succeed method, map it to the callback.
-  context.succeed = result => callback(null, result);
-
-  // Run the proxy.
-  awsServerlessExpress.proxy(server, event, context)
-}
+//module.exports.api = (event, context, callback) => {
+//  // Stub the succeed method, map it to the callback.
+//  /* eslint-disable no-param-reassign */
+//  context.succeed = result => callback(null, result);
+//  /* eslint-enable no-param-reassign */
+//
+//  // Run the proxy.
+//  awsServerlessExpress.proxy(server, event, context)
+//}
